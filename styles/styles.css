@@ -396,9 +396,13 @@ h3 {
     margin-top: var(--space-md);
 }
 
+/* ----------------------------------------------------------------------------
+   TP3 (refactor/login): .form-row, .checkbox-label y .link-muted eran
+   exclusivos de login.html 
+   ------------------------------------------------------------------------- */
+
 .form-row {
     display: flex;
-    /* FLEXBOX: recordar + olvidé contraseña */
     justify-content: space-between;
     align-items: center;
     margin-top: var(--space-sm);
@@ -421,6 +425,7 @@ h3 {
 .link-muted:hover {
     color: var(--color-primary);
 }
+
 
 
 /* ----------------------------------------------------------------------------
@@ -449,11 +454,13 @@ h3 {
 
 
 /* ----------------------------------------------------------------------------
-   10. LOGIN (login.html)  ->  GRID de dos paneles
+   10. LOGIN (login.html)  ->  GRID de dos paneles [TP2]
+   TP3 (refactor/login): reemplazado por el sistema de grillas de Bootstrap
+   (row/col) + componente card.
    ------------------------------------------------------------------------- */
+/*
 .auth-body {
     min-height: 100vh;
-    /* vh */
     display: grid;
     place-items: center;
     background: var(--color-bg-alt);
@@ -462,11 +469,8 @@ h3 {
 
 .auth-card {
     display: grid;
-    /* CSS GRID */
     grid-template-columns: 1fr 1fr;
-    /* fr: dos columnas iguales */
     width: min(100%, 900px);
-    /* % con tope */
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
@@ -477,7 +481,6 @@ h3 {
     color: var(--color-white);
     padding: var(--space-lg);
     display: flex;
-    /* FLEXBOX interno */
     flex-direction: column;
     justify-content: center;
     gap: var(--space-sm);
@@ -496,6 +499,7 @@ h3 {
     display: inline-block;
     margin-top: var(--space-md);
 }
+*/
 
 
 /* ----------------------------------------------------------------------------
@@ -626,17 +630,20 @@ h3 {
    Diseño para computadora (base, arriba) -> tablet -> celular.
    ------------------------------------------------------------------------- */
 
-/* TABLET (hasta 900px): el login pasa a una sola columna */
+/* TABLET (hasta 900px): el login pasa a una sola columna [TP2]
+   TP3 (refactor/login): el colapso a 1 columna ahora lo maneja Bootstrap
+   (col-md-6 -> se apila por debajo de 768px). Se comenta, no se elimina. */
+/*
 @media (max-width: 900px) {
     .auth-card {
         grid-template-columns: 1fr;
     }
 
-    /* 1 columna */
     .auth-side {
         text-align: center;
     }
 }
+*/
 
 /* TABLET / móvil ancho (hasta 768px) */
 @media (max-width: 768px) {
@@ -697,10 +704,70 @@ h3 {
 }
 
 /* Ajuste fino: en pantallas muy chicas, la fila "recordarme / olvidé"
-   se envuelve para que no queden pegados el checkbox y el enlace. */
+   se envuelve para que no queden pegados el checkbox y el enlace. [TP2]
+   TP3 (refactor/login): resuelto con utilidades flex-wrap de Bootstrap
+   directamente en el markup. Se comenta, no se elimina. */
+/*
 @media (max-width: 480px) {
     .form-row {
         flex-wrap: wrap;
         gap: var(--space-xs);
     }
+}
+*/
+
+
+/* ----------------------------------------------------------------------------
+   13. TP3 — REFACTOR BOOTSTRAP (login.html)
+   Este archivo sigue siendo la hoja de estilos externa del sitio. Estas reglas
+   no reemplazan a Bootstrap, solo lo tiñen con la identidad de Nuova Vita
+   (paleta y tipografías definidas en la Sección 1) reutilizando las mismas
+   variables CSS. Se cargan después de Bootstrap en login.html.
+   ------------------------------------------------------------------------- */
+.login-page {
+    background-color: var(--color-bg-alt);
+    font-family: var(--font-body);
+    color: var(--color-text);
+}
+
+.login-panel {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.login-panel .logo {
+    color: var(--color-white);
+}
+
+.login-card {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+}
+
+.login-form h1,
+.login-panel h2 {
+    font-family: var(--font-heading);
+}
+
+.login-form label {
+    font-weight: 600;
+}
+
+.login-form .form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.2rem rgba(197, 113, 78, 0.25);
+    /* halo terracota en vez del azul por defecto de Bootstrap */
+}
+
+.login-form .form-check-input:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.login-link {
+    color: var(--color-text-light);
+}
+
+.login-link:hover {
+    color: var(--color-primary);
 }
