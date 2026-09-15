@@ -458,7 +458,7 @@ h3 {
    TP3 (refactor/login): reemplazado por el sistema de grillas de Bootstrap
    (row/col) + componente card.
    ------------------------------------------------------------------------- */
-/*
+
 .auth-body {
     min-height: 100vh;
     display: grid;
@@ -499,7 +499,7 @@ h3 {
     display: inline-block;
     margin-top: var(--space-md);
 }
-*/
+
 
 
 /* ----------------------------------------------------------------------------
@@ -633,7 +633,7 @@ h3 {
 /* TABLET (hasta 900px): el login pasa a una sola columna [TP2]
    TP3 (refactor/login): el colapso a 1 columna ahora lo maneja Bootstrap
    (col-md-6 -> se apila por debajo de 768px). Se comenta, no se elimina. */
-/*
+
 @media (max-width: 900px) {
     .auth-card {
         grid-template-columns: 1fr;
@@ -643,7 +643,7 @@ h3 {
         text-align: center;
     }
 }
-*/
+
 
 /* TABLET / móvil ancho (hasta 768px) */
 @media (max-width: 768px) {
@@ -707,14 +707,14 @@ h3 {
    se envuelve para que no queden pegados el checkbox y el enlace. [TP2]
    TP3 (refactor/login): resuelto con utilidades flex-wrap de Bootstrap
    directamente en el markup. Se comenta, no se elimina. */
-/*
+
 @media (max-width: 480px) {
     .form-row {
         flex-wrap: wrap;
         gap: var(--space-xs);
     }
 }
-*/
+
 
 
 /* ----------------------------------------------------------------------------
