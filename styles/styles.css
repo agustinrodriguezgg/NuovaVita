@@ -661,7 +661,7 @@ exclusivos de login.html.
 
 /* TABLET (hasta 900px): el login pasa a una sola columna [TP2]
    TP3 (refactor/login): el colapso a 1 columna ahora lo maneja Bootstrap
-   (col-md-6 -> se apila por debajo de 768px). Se comenta, no se elimina. */
+   (col-md-6 -> se apila por debajo de 768px). */
 
 /* TP3: responsive del login reemplazado por col-md-* de Bootstrap.
 @media (max-width: 900px) {
@@ -746,7 +746,7 @@ exclusivos de login.html.
 /* Ajuste fino: en pantallas muy chicas, la fila "recordarme / olvidé"
    se envuelve para que no queden pegados el checkbox y el enlace. [TP2]
    TP3 (refactor/login): resuelto con utilidades flex-wrap de Bootstrap
-   directamente en el markup. Se comenta, no se elimina. */
+   directamente en el markup. */
 
 /* TP3: reemplazado por d-flex, flex-wrap y gap-2 de Bootstrap.
 @media (max-width: 480px) {
@@ -764,7 +764,7 @@ exclusivos de login.html.
    Este archivo sigue siendo la hoja de estilos externa del sitio. Estas reglas
    no reemplazan a Bootstrap, solo lo tiñen con la identidad de Nuova Vita
    (paleta y tipografías definidas en la Sección 1) reutilizando las mismas
-   variables CSS. Se cargan después de Bootstrap en login.html.
+   variables CSS
    ------------------------------------------------------------------------- */
 .login-page {
     background-color: var(--color-bg-alt);
@@ -799,6 +799,13 @@ exclusivos de login.html.
     border-color: var(--color-primary);
     box-shadow: 0 0 0 0.2rem rgba(197, 113, 78, 0.25);
     /* halo terracota en vez del azul por defecto de Bootstrap */
+}
+
+.login-form .btn-primary:focus,
+.login-form .btn-primary:active,
+.login-form .btn-check:focus + .btn-primary {
+    box-shadow: 0 0 0 0.2rem rgba(197, 113, 78, 0.4);
+    
 }
 
 .login-form .form-check-input:checked {
