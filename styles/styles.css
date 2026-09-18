@@ -112,13 +112,13 @@ h3 {
 
 /* min(90%, --max-width): usa % en pantallas chicas y se topa en el máximo */
 .container {
-    /* TP3 (refactor/index-dashboard): Bootstrap administra el ancho y centrado.*/
+    /* TP3 (refactor/index-dashboard): Bootstrap administra el ancho y centrado.
     width: min(90%, var(--max-width));
-    margin-inline: auto; 
+    margin-inline: auto; */
 }
 
 .btn {
-    /* TP3: estructura y espaciado provistos por el componente .btn de Bootstrap.*/
+    /* TP3: estructura y espaciado provistos por el componente .btn de Bootstrap.
     display: inline-block;
     padding: 0.75rem 1.5rem;
     border: none;
@@ -126,7 +126,7 @@ h3 {
     font-family: var(--font-body);
     font-weight: 600;
     text-decoration: none;
-    cursor: pointer; 
+    cursor: pointer; */
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -154,12 +154,12 @@ h3 {
     background-color: var(--color-secondary-dark);
 }
 
-/* TP3: reemplazado por la utilidad w-100 de Bootstrap.*/
+/* TP3: reemplazado por la utilidad w-100 de Bootstrap.
 .btn-block {
     width: 100%;
     text-align: center;
 }
-
+*/
 
 /* ancho 100% (login) */
 
@@ -179,24 +179,24 @@ h3 {
 .site-header {
     background-color: var(--color-white);
     border-bottom: var(--border);
-    /* TP3 (refactor/index): sticky-top de Bootstrap reemplaza estas reglas.*/
+    /* TP3 (refactor/index): sticky-top de Bootstrap reemplaza estas reglas.
     position: sticky;
     top: 0;
-    z-index: 10; 
+    z-index: 10; */
 }
 
-/* TP3 (refactor/index): reemplazado por navbar, container y utilidades Bootstrap.*/
+/* TP3 (refactor/index): reemplazado por navbar, container y utilidades Bootstrap.
 .header-inner {
     display: flex;
-    /* FLEXBOX */
+    FLEXBOX
     align-items: center;
-    /* centra verticalmente */
+    centra verticalmente
     justify-content: space-between;
-    /* empuja los extremos */
+    empuja los extremos
     gap: var(--space-md);
     padding-block: var(--space-sm);
 }
-
+*/
 
 .logo {
     display: flex;
@@ -217,11 +217,11 @@ h3 {
 
 /* tamaño fijo en px del logo */
 
-/* TP3 (refactor/index): reemplazado por navbar-nav, nav-item y nav-link.*/
+/* TP3 (refactor/index): reemplazado por navbar-nav, nav-item y nav-link.
 .main-nav ul {
     list-style: none;
     display: flex;
-    /* FLEXBOX: menú horizontal */
+    FLEXBOX: menú horizontal
     gap: var(--space-md);
 }
 
@@ -234,7 +234,7 @@ h3 {
 .main-nav a:hover {
     color: var(--color-primary);
 }
-
+*/
 
 
 /* ----------------------------------------------------------------------------
@@ -250,16 +250,16 @@ h3 {
     place-items: center;
 }
 
-/* TP3 (refactor/index): reemplazado por row, col-md-6 y utilidades responsive.*/
+/* TP3 (refactor/index): reemplazado por row, col-md-6 y utilidades responsive.
 .hero-grid {
     display: grid;
-    /* CSS GRID */
+    CSS GRID
     grid-template-columns: 1.1fr 0.9fr;
-    /* fr: dos columnas proporcionales */
+    fr: dos columnas proporcionales
     gap: var(--space-lg);
     align-items: center;
 }
-
+*/
 
 .hero-text h1 {
     font-size: clamp(2rem, 5vw, 3.2rem);
@@ -294,15 +294,15 @@ h3 {
     background-color: var(--color-bg-alt);
 }
 
-/* TP3 (refactor/index): reemplazado por row-cols-* y gap de Bootstrap.*/
+/* TP3 (refactor/index): reemplazado por row-cols-* y gap de Bootstrap.
 .card-grid {
     display: grid;
-    /* CSS GRID */
+    CSS GRID
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    /* rem + fr */
+    rem + fr
     gap: var(--space-md);
 }
-
+*/
 
 .card {
     background: var(--color-white);
@@ -343,15 +343,15 @@ h3 {
    7. ROLES DEL SISTEMA  ->  FLEXBOX (con wrap)
    A diferencia de Servicios (Grid), acá las tarjetas se distribuyen con flex.
    ------------------------------------------------------------------------- */
-/* TP3 (refactor/index): reemplazado por row-cols-* y columnas Bootstrap.*/
+/* TP3 (refactor/index): reemplazado por row-cols-* y columnas Bootstrap.
 .roles-list {
     display: flex;
-    /* FLEXBOX */
+    FLEXBOX
     flex-wrap: wrap;
-    /*pasan a varias filas si no entran*/
+    pasan a varias filas si no entran
     gap: var(--space-md);
 }
-
+*/
 
 .role-card {
     flex: 1 1 15rem;
@@ -380,13 +380,14 @@ h3 {
    TP3: estas reglas ya no se usan. index.html utiliza .contact-form y las
    clases form-label/form-control; login.html utiliza .login-form y Bootstrap.
    ------------------------------------------------------------------------- */
+/*
 .form {
     display: flex;
-    /* FLEXBOX */
+    FLEXBOX
     flex-direction: column;
     gap: var(--space-xs);
     width: min(100%, 480px);
-    /* porcentaje con tope */
+    porcentaje con tope
     margin-inline: auto;
 }
 
@@ -398,22 +399,22 @@ h3 {
 .form input,
 .form textarea {
     padding: 0.75rem 0.9rem;
-    /* padding en rem */
+    padding en rem
     border: var(--border);
-    /* border */
+    border
     border-radius: var(--radius-sm);
     font-family: var(--font-body);
     font-size: 1rem;
     width: 100%;
-    /* porcentaje */
+    porcentaje
 }
 
 .form button {
     margin-top: var(--space-md);
 }
 
-/* TP3 (refactor/login): .form-row, .checkbox-label y .link-muted eran
-exclusivos de login.html. */
+TP3 (refactor/login): .form-row, .checkbox-label y .link-muted eran
+exclusivos de login.html.
 
 .form-row {
     display: flex;
@@ -439,7 +440,7 @@ exclusivos de login.html. */
 .link-muted:hover {
     color: var(--color-primary);
 }
-
+*/
 
 
 
@@ -452,17 +453,17 @@ exclusivos de login.html. */
     padding-block: var(--space-md);
 }
 
-/* TP3 (refactor/index): reemplazado por utilidades flex responsive de Bootstrap.*/
+/* TP3 (refactor/index): reemplazado por utilidades flex responsive de Bootstrap.
 .footer-inner {
     display: flex;
-    /* FLEXBOX */
+    FLEXBOX
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: var(--space-sm);
     font-size: 0.9rem;
 }
-
+*/
 
 .site-footer a {
     color: var(--color-secondary);
@@ -476,6 +477,7 @@ exclusivos de login.html. */
    (row/col) + componente card. Se conserva comentado como referencia.
    ------------------------------------------------------------------------- */
 
+/*
 .auth-body {
     min-height: 100vh;
     display: grid;
@@ -516,32 +518,32 @@ exclusivos de login.html. */
     display: inline-block;
     margin-top: var(--space-md);
 }
-
+*/
 
 
 
 /* ----------------------------------------------------------------------------
    11. DASHBOARD (dashboard.html)  ->  GRID (barra lateral + contenido)
    ------------------------------------------------------------------------- */
-/* TP3 (refactor/dashboard): reemplazado por container-fluid, row y col-*.*/
+/* TP3 (refactor/dashboard): reemplazado por container-fluid, row y col-*.
 .dashboard {
     display: grid;
-    /* CSS GRID */
+    CSS GRID
     grid-template-columns: 240px 1fr;
-    /* px fijo + fr flexible */
+    px fijo + fr flexible
     min-height: 100vh;
-    /* vh */
+    vh
 }
-
+*/
 
 .sidebar {
     background: var(--color-text);
     color: var(--color-bg);
-    /* TP3: p-4, d-flex, flex-column y gap-4 reemplazan estas reglas.*/
+    /* TP3: p-4, d-flex, flex-column y gap-4 reemplazan estas reglas.
     padding: var(--space-md);
     display: flex;
     flex-direction: column;
-    gap: var(--space-lg); 
+    gap: var(--space-lg); */
 }
 
 .sidebar .logo {
@@ -550,10 +552,10 @@ exclusivos de login.html. */
 
 .sidebar-nav ul {
     list-style: none;
-    /* TP3: nav, flex-column y gap-1 de Bootstrap reemplazan estas reglas.*/
+    /* TP3: nav, flex-column y gap-1 de Bootstrap reemplazan estas reglas.
     display: flex;
     flex-direction: column;
-    gap: 0.25rem; 
+    gap: 0.25rem; */
 }
 
 .sidebar-nav a {
@@ -581,19 +583,19 @@ exclusivos de login.html. */
 }
 
 .dashboard-content {
-    /* TP3: reemplazado por p-4 y p-lg-5.*/
-    padding: var(--space-lg); 
+    /* TP3: reemplazado por p-4 y p-lg-5.
+    padding: var(--space-lg); */
 }
 
 .dashboard-header {
     /* TP3: reemplazado por utilidades d-flex, flex-wrap, gap-3,
-       justify-content-between, align-items-center y mb-5. */
+       justify-content-between, align-items-center y mb-5.
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-lg); */
 }
 
 .user-badge {
@@ -605,26 +607,26 @@ exclusivos de login.html. */
 }
 
 /* Tarjetas de estadísticas -> GRID */
-/* TP3 (refactor/dashboard): reemplazado por row-cols-* y g-4 de Bootstrap.*/
+/* TP3 (refactor/dashboard): reemplazado por row-cols-* y g-4 de Bootstrap.
 .stats-grid {
     display: grid;
-    /* CSS GRID */
+    CSS GRID
     grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-    /* rem + fr */
+    rem + fr
     gap: var(--space-md);
     margin-bottom: var(--space-lg);
 }
-
+*/
 
 .stat-card {
     background: var(--color-white);
     padding: var(--space-md);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    /* TP3: la distribución interna se mantiene con utilidades/componentes.*/
+    /* TP3: la distribución interna se mantiene con utilidades/componentes.
     display: flex;
     flex-direction: column;
-    gap: var(--space-xs); 
+    gap: var(--space-xs); */
 }
 
 .stat-number {
@@ -661,7 +663,7 @@ exclusivos de login.html. */
    TP3 (refactor/login): el colapso a 1 columna ahora lo maneja Bootstrap
    (col-md-6 -> se apila por debajo de 768px). */
 
-/* TP3: responsive del login reemplazado por col-md-* de Bootstrap.*/
+/* TP3: responsive del login reemplazado por col-md-* de Bootstrap.
 @media (max-width: 900px) {
     .auth-card {
         grid-template-columns: 1fr;
@@ -671,40 +673,40 @@ exclusivos de login.html. */
         text-align: center;
     }
 }
-
+*/
 
 
 /* TABLET / móvil ancho (hasta 768px) */
 @media (max-width: 768px) {
-    /* TP3 (refactor/index): row y col-md-6 administran este cambio.*/
+    /* TP3 (refactor/index): row y col-md-6 administran este cambio.
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+    */
 
-    /* TP3: order-first, order-md-last y columnas Bootstrap reemplazan esto.*/
+    /* TP3: order-first, order-md-last y columnas Bootstrap reemplazan esto.
     .hero-img {
         order: -1;
         max-width: 22rem;
         margin-inline: auto;
     }
-    
+    */
 
-    /* TP3: el texto se adapta dentro de la columna Bootstrap.*/
+    /* TP3: el texto se adapta dentro de la columna Bootstrap.
     .hero-text p {
         max-width: 100%;
     }
-    
+    */
 
-    /* TP3 (refactor/dashboard): col-12 y col-md-* reemplazan el responsive.*/
+    /* TP3 (refactor/dashboard): col-12 y col-md-* reemplazan el responsive.
     .dashboard {
         grid-template-columns: 1fr;
     }
 
     .sidebar {
         flex-direction: row;
-        /* FLEXBOX horizontal en móvil */
+        FLEXBOX horizontal en móvil
         flex-wrap: wrap;
         align-items: center;
         gap: var(--space-sm);
@@ -718,23 +720,23 @@ exclusivos de login.html. */
     .logout-link {
         margin-top: 0;
     }
-    
+    */
 }
 
 /* CELULAR (hasta 480px): se oculta el menú horizontal del header */
 @media (max-width: 480px) {
-    /* TP3: navbar-expand-lg y collapse reemplazan este ocultamiento.*/
+    /* TP3: navbar-expand-lg y collapse reemplazan este ocultamiento.
     .main-nav {
         display: none;
     }
-    
+    */
 
-    /* TP3: utilidades flex-column/flex-sm-row y text-center reemplazan esto.*/
+    /* TP3: utilidades flex-column/flex-sm-row y text-center reemplazan esto.
     .footer-inner {
         justify-content: center;
         text-align: center;
     }
-    
+    */
 
     .section {
         padding-block: var(--space-lg);
@@ -746,14 +748,14 @@ exclusivos de login.html. */
    TP3 (refactor/login): resuelto con utilidades flex-wrap de Bootstrap
    directamente en el markup. */
 
-/* TP3: reemplazado por d-flex, flex-wrap y gap-2 de Bootstrap.*/
+/* TP3: reemplazado por d-flex, flex-wrap y gap-2 de Bootstrap.
 @media (max-width: 480px) {
     .form-row {
         flex-wrap: wrap;
         gap: var(--space-xs);
     }
 }
-
+*/
 
 
 
