@@ -813,6 +813,13 @@ exclusivos de login.html.*/
     border-color: var(--color-primary);
 }
 
+.login-form input[type="password"]::-ms-reveal,
+.login-form input[type="password"]::-ms-clear {
+    display: none;
+    /* oculta el ícono nativo de "mostrar contraseña" de Edge/IE,
+       que duplica al botón propio (ícono de ojo) del login */
+}
+
 .login-link {
     color: var(--color-text-light);
 }
