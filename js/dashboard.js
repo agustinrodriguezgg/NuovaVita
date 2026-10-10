@@ -4,13 +4,9 @@
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const activePatientsCount = document.getElementById(
-    "active-patients-count",
-  );
+  const activePatientsCount = document.getElementById("active-patients-count");
 
-  const pendingReportsCount = document.getElementById(
-    "pending-reports-count",
-  );
+  const pendingReportsCount = document.getElementById("pending-reports-count");
 
   const todayAppointmentsCount = document.getElementById(
     "today-appointments-count",
@@ -18,29 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const alertsCount = document.getElementById("alerts-count");
 
-  const activityList = document.getElementById(
-    "recent-activity-list",
-  );
+  const activityList = document.getElementById("recent-activity-list");
 
   const emptyActivityMessage = document.getElementById(
     "empty-activity-message",
   );
 
-  const patientSearchInput = document.getElementById(
-    "patient-search",
-  );
+  const patientSearchInput = document.getElementById("patient-search");
 
-  const patientStatusFilter = document.getElementById(
-    "patient-status-filter",
-  );
+  const patientStatusFilter = document.getElementById("patient-status-filter");
 
-  const patientTableBody = document.getElementById(
-    "patient-table-body",
-  );
+  const patientTableBody = document.getElementById("patient-table-body");
 
-  const patientResultsCount = document.getElementById(
-    "patient-results-count",
-  );
+  const patientResultsCount = document.getElementById("patient-results-count");
 
   const emptyPatientsMessage = document.getElementById(
     "empty-patients-message",
@@ -160,9 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       (appointment) => appointment.date === "today",
     ).length;
 
-    const unresolvedAlerts = alerts.filter(
-      (alert) => !alert.resolved,
-    ).length;
+    const unresolvedAlerts = alerts.filter((alert) => !alert.resolved).length;
 
     activePatientsCount.textContent = activePatients;
     pendingReportsCount.textContent = pendingReports;
@@ -192,26 +176,18 @@ document.addEventListener("DOMContentLoaded", () => {
       activityContent.className = "activity-content";
 
       activityTitle.className = "h6 mb-1";
-      activityTitle.textContent =
-        `${activity.type} — ${activity.person}`;
+      activityTitle.textContent = `${activity.type} — ${activity.person}`;
 
       activityDescription.className = "mb-0 text-muted";
       activityDescription.textContent = activity.description;
 
-      activityTime.className =
-        "activity-time text-muted text-nowrap";
+      activityTime.className = "activity-time text-muted text-nowrap";
 
       activityTime.textContent = activity.time;
 
-      activityContent.append(
-        activityTitle,
-        activityDescription,
-      );
+      activityContent.append(activityTitle, activityDescription);
 
-      listItem.append(
-        activityContent,
-        activityTime,
-      );
+      listItem.append(activityContent, activityTime);
 
       activityList.append(listItem);
     });
@@ -247,9 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ? "badge text-bg-success"
         : "badge text-bg-secondary";
 
-      statusBadge.textContent = isActive
-        ? "Activo"
-        : "Inactivo";
+      statusBadge.textContent = isActive ? "Activo" : "Inactivo";
 
       statusCell.append(statusBadge);
       row.append(nameCell, statusCell);
@@ -257,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-    const normalizeText = (text) => {
+  const normalizeText = (text) => {
     return text
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
@@ -265,21 +239,17 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const applyPatientFilters = () => {
-    const searchTerm = normalizeText(
-      patientSearchInput.value.trim(),
-    );
+    const searchTerm = normalizeText(patientSearchInput.value.trim());
 
     const selectedStatus = patientStatusFilter.value;
 
     const filteredPatients = patients.filter((patient) => {
       const normalizedPatientName = normalizeText(patient.name);
 
-      const matchesName =
-        normalizedPatientName.includes(searchTerm);
+      const matchesName = normalizedPatientName.includes(searchTerm);
 
       const matchesStatus =
-        selectedStatus === "all" ||
-        patient.status === selectedStatus;
+        selectedStatus === "all" || patient.status === selectedStatus;
 
       return matchesName && matchesStatus;
     });
@@ -287,15 +257,9 @@ document.addEventListener("DOMContentLoaded", () => {
     renderPatients(filteredPatients);
   };
 
-  patientSearchInput.addEventListener(
-    "input",
-    applyPatientFilters,
-  );
+  patientSearchInput.addEventListener("input", applyPatientFilters);
 
-  patientStatusFilter.addEventListener(
-    "change",
-    applyPatientFilters,
-  );
+  patientStatusFilter.addEventListener("change", applyPatientFilters);
 
   renderStatistics();
   renderRecentActivities();
