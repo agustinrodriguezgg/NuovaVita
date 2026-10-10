@@ -15,52 +15,50 @@
      • Unidades: px, %, rem, vh, vw, fr -> usadas a lo largo de todo el archivo
    ========================================================================= */
 
-
 /* ----------------------------------------------------------------------------
    1. VARIABLES CSS  (se definen una vez en :root y se reusan con var())
    ------------------------------------------------------------------------- */
 :root {
-    /* Colores — paleta del proyecto: terracota / salvia / crema */
-    --color-bg: #FAF6EF;
-    /* crema  — fondo general */
-    --color-bg-alt: #F1E9DA;
-    /* crema oscuro — secciones alternadas */
-    --color-primary: #C5714E;
-    /* terracota */
-    --color-primary-dark: #A85A3A;
-    --color-secondary: #8A9A7B;
-    /* salvia */
-    --color-secondary-dark: #6F7D63;
-    --color-text: #3A362F;
-    --color-text-light: #6B665C;
-    --color-white: #FFFFFF;
-    --color-border: #E4DCC8;
+  /* Colores — paleta del proyecto: terracota / salvia / crema */
+  --color-bg: #faf6ef;
+  /* crema  — fondo general */
+  --color-bg-alt: #f1e9da;
+  /* crema oscuro — secciones alternadas */
+  --color-primary: #c5714e;
+  /* terracota */
+  --color-primary-dark: #a85a3a;
+  --color-secondary: #8a9a7b;
+  /* salvia */
+  --color-secondary-dark: #6f7d63;
+  --color-text: #3a362f;
+  --color-text-light: #6b665c;
+  --color-white: #ffffff;
+  --color-border: #e4dcc8;
 
-    /* Tipografías */
-    --font-heading: 'Poppins', sans-serif;
-    --font-body: 'Nunito Sans', sans-serif;
+  /* Tipografías */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Nunito Sans", sans-serif;
 
-    /* Escala de espaciados (en rem) — para márgenes y paddings coherentes */
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 3rem;
-    --space-xl: 5rem;
+  /* Escala de espaciados (en rem) — para márgenes y paddings coherentes */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
 
-    /* Bordes y sombras */
-    --radius: 12px;
-    /* px */
-    --radius-sm: 8px;
-    --border: 1px solid var(--color-border);
-    /* border reutilizable */
-    --shadow: 0 4px 14px rgba(58, 54, 47, 0.08);
-    /* sombra suave */
-    --shadow-lg: 0 10px 30px rgba(58, 54, 47, 0.14);
+  /* Bordes y sombras */
+  --radius: 12px;
+  /* px */
+  --radius-sm: 8px;
+  --border: 1px solid var(--color-border);
+  /* border reutilizable */
+  --shadow: 0 4px 14px rgba(58, 54, 47, 0.08);
+  /* sombra suave */
+  --shadow-lg: 0 10px 30px rgba(58, 54, 47, 0.14);
 
-    /* Ancho máximo del contenido */
-    --max-width: 1120px;
+  /* Ancho máximo del contenido */
+  --max-width: 1120px;
 }
-
 
 /* ----------------------------------------------------------------------------
    2. RESET y BOX MODEL
@@ -69,30 +67,30 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    /* Box Model */
-    margin: 0;
-    /* reseteamos márgenes por defecto */
-    padding: 0;
-    /* reseteamos paddings por defecto */
+  box-sizing: border-box;
+  /* Box Model */
+  margin: 0;
+  /* reseteamos márgenes por defecto */
+  padding: 0;
+  /* reseteamos paddings por defecto */
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* scroll suave con los anclas del nav */
 
 body {
-    font-family: var(--font-body);
-    color: var(--color-text);
-    background-color: var(--color-bg);
-    line-height: 1.6;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
 }
 
 img {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 
 /* imágenes fluidas (100% del contenedor) */
@@ -100,11 +98,10 @@ img {
 h1,
 h2,
 h3 {
-    font-family: var(--font-heading);
-    color: var(--color-text);
-    line-height: 1.2;
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  line-height: 1.2;
 }
-
 
 /* ----------------------------------------------------------------------------
    3. UTILIDADES (contenedor centrado + botones)
@@ -112,127 +109,126 @@ h3 {
 
 /* min(90%, --max-width): usa % en pantallas chicas y se topa en el máximo */
 .container {
-    /* TP3 (refactor/index-dashboard): Bootstrap administra el ancho y centrado.*/
-    width: min(90%, var(--max-width));
-    margin-inline: auto; 
+  /* TP3 (refactor/index-dashboard): Bootstrap administra el ancho y centrado.*/
+  width: min(90%, var(--max-width));
+  margin-inline: auto;
 }
 
 .btn {
-    /* TP3: estructura y espaciado provistos por el componente .btn de Bootstrap.*/
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: var(--radius-sm);
-    font-family: var(--font-body);
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer; 
-    transition: background-color 0.2s ease, transform 0.2s ease;
+  /* TP3: estructura y espaciado provistos por el componente .btn de Bootstrap.*/
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 /* leve elevación al pasar el mouse */
 
 .btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-primary-dark);
+  background-color: var(--color-primary-dark);
 }
 
 .btn-secondary {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-secondary-dark);
+  background-color: var(--color-secondary-dark);
 }
 
 /* TP3: reemplazado por la utilidad w-100 de Bootstrap.*/
 .btn-block {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
-
 
 /* ancho 100% (login) */
 
 /* Título de sección reutilizable */
 .section-title {
-    font-size: clamp(1.6rem, 4vw, 2.2rem);
-    /* clamp con vw: tamaño fluido */
-    text-align: center;
-    margin-bottom: var(--space-lg);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  /* clamp con vw: tamaño fluido */
+  text-align: center;
+  margin-bottom: var(--space-lg);
 }
-
 
 /* ----------------------------------------------------------------------------
    4. HEADER + NAV  ->  FLEXBOX
    Distribuye logo, menú y botón en una fila, alineados verticalmente.
    ------------------------------------------------------------------------- */
 .site-header {
-    background-color: var(--color-white);
-    border-bottom: var(--border);
-    /* TP3 (refactor/index): sticky-top de Bootstrap reemplaza estas reglas.*/
-    position: sticky;
-    top: 0;
-    z-index: 10; 
+  background-color: var(--color-white);
+  border-bottom: var(--border);
+  /* TP3 (refactor/index): sticky-top de Bootstrap reemplaza estas reglas.*/
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 /* TP3 (refactor/index): reemplazado por navbar, container y utilidades Bootstrap.*/
 .header-inner {
-    display: flex;
-    /* FLEXBOX */
-    align-items: center;
-    /* centra verticalmente */
-    justify-content: space-between;
-    /* empuja los extremos */
-    gap: var(--space-md);
-    padding-block: var(--space-sm);
+  display: flex;
+  /* FLEXBOX */
+  align-items: center;
+  /* centra verticalmente */
+  justify-content: space-between;
+  /* empuja los extremos */
+  gap: var(--space-md);
+  padding-block: var(--space-sm);
 }
 
-
 .logo {
-    display: flex;
-    /* FLEXBOX: ícono + texto del logo */
-    align-items: center;
-    gap: var(--space-xs);
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: var(--color-primary);
-    text-decoration: none;
+  display: flex;
+  /* FLEXBOX: ícono + texto del logo */
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
 .logo img {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
 /* tamaño fijo en px del logo */
 
 /* TP3 (refactor/index): reemplazado por navbar-nav, nav-item y nav-link.*/
 .main-nav ul {
-    list-style: none;
-    display: flex;
-    /* FLEXBOX: menú horizontal */
-    gap: var(--space-md);
+  list-style: none;
+  display: flex;
+  /* FLEXBOX: menú horizontal */
+  gap: var(--space-md);
 }
 
 .main-nav a {
-    text-decoration: none;
-    color: var(--color-text);
-    font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 .main-nav a:hover {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
 */
 
@@ -242,102 +238,101 @@ h3 {
    min-height con vh para que ocupe buena parte del alto de la ventana.
    ------------------------------------------------------------------------- */
 .hero {
-    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
-    padding-block: var(--space-xl);
-    min-height: 70vh;
-    /* vh: 70% del alto de la ventana */
-    display: grid;
-    place-items: center;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg) 0%,
+    var(--color-bg-alt) 100%
+  );
+  padding-block: var(--space-xl);
+  min-height: 70vh;
+  /* vh: 70% del alto de la ventana */
+  display: grid;
+  place-items: center;
 }
 
 /* TP3 (refactor/index): reemplazado por row, col-md-6 y utilidades responsive.*/
 .hero-grid {
-    display: grid;
-    /* CSS GRID */
-    grid-template-columns: 1.1fr 0.9fr;
-    /* fr: dos columnas proporcionales */
-    gap: var(--space-lg);
-    align-items: center;
+  display: grid;
+  /* CSS GRID */
+  grid-template-columns: 1.1fr 0.9fr;
+  /* fr: dos columnas proporcionales */
+  gap: var(--space-lg);
+  align-items: center;
 }
 
-
 .hero-text h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    /* vw + rem: título fluido */
-    margin-bottom: var(--space-sm);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  /* vw + rem: título fluido */
+  margin-bottom: var(--space-sm);
 }
 
 .hero-text p {
-    color: var(--color-text-light);
-    font-size: 1.1rem;
-    margin-bottom: var(--space-md);
-    max-width: 90%;
-    /* % */
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+  max-width: 90%;
+  /* % */
 }
 
 .hero-img img {
-    width: 100%;
-    /* % */
-    filter: drop-shadow(var(--shadow-lg));
+  width: 100%;
+  /* % */
+  filter: drop-shadow(var(--shadow-lg));
 }
-
 
 /* ----------------------------------------------------------------------------
    6. SERVICIOS / FUNCIONALIDADES  ->  CSS GRID de tarjetas
    auto-fit + minmax: las columnas se acomodan solas según el ancho.
    ------------------------------------------------------------------------- */
 .section {
-    padding-block: var(--space-xl);
+  padding-block: var(--space-xl);
 }
 
 .section-alt {
-    background-color: var(--color-bg-alt);
+  background-color: var(--color-bg-alt);
 }
 
 /* TP3 (refactor/index): reemplazado por row-cols-* y gap de Bootstrap.*/
 .card-grid {
-    display: grid;
-    /* CSS GRID */
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    /* rem + fr */
-    gap: var(--space-md);
+  display: grid;
+  /* CSS GRID */
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  /* rem + fr */
+  gap: var(--space-md);
 }
-*/
-
-.card {
-    background: var(--color-white);
-    padding: var(--space-md);
-    /* padding */
-    border-radius: var(--radius);
-    border-top: 4px solid var(--color-primary);
-    /* border en px */
-    box-shadow: var(--shadow);
-    /* sombra */
+*/ .card {
+  background: var(--color-white);
+  padding: var(--space-md);
+  /* padding */
+  border-radius: var(--radius);
+  border-top: 4px solid var(--color-primary);
+  /* border en px */
+  box-shadow: var(--shadow);
+  /* sombra */
 }
 
 .card h3 {
-    margin-bottom: var(--space-xs);
-    font-size: 1.15rem;
+  margin-bottom: var(--space-xs);
+  font-size: 1.15rem;
 }
 
 .card p {
-    color: var(--color-text-light);
-    font-size: 0.95rem;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
 }
 
 .card .icon {
-    width: 44px;
-    height: 44px;
-    /* px */
-    margin-bottom: var(--space-sm);
-    display: grid;
-    place-items: center;
-    background: var(--color-bg-alt);
-    border-radius: 50%;
-    /* círculo */
-    font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  /* px */
+  margin-bottom: var(--space-sm);
+  display: grid;
+  place-items: center;
+  background: var(--color-bg-alt);
+  border-radius: 50%;
+  /* círculo */
+  font-size: 1.4rem;
 }
-
 
 /* ----------------------------------------------------------------------------
    7. ROLES DEL SISTEMA  ->  FLEXBOX (con wrap)
@@ -345,35 +340,33 @@ h3 {
    ------------------------------------------------------------------------- */
 /* TP3 (refactor/index): reemplazado por row-cols-* y columnas Bootstrap.*/
 .roles-list {
-    display: flex;
-    /* FLEXBOX */
-    flex-wrap: wrap;
-    /* pasan a varias filas si no entran */
-    gap: var(--space-md);
+  display: flex;
+  /* FLEXBOX */
+  flex-wrap: wrap;
+  /* pasan a varias filas si no entran */
+  gap: var(--space-md);
 }
 
-
 .role-card {
-    flex: 1 1 15rem;
-    /* crecer/encoger, base 15rem (rem) */
-    background: var(--color-white);
-    padding: var(--space-md);
-    border-radius: var(--radius);
-    border-left: 4px solid var(--color-secondary);
-    /* border */
-    box-shadow: var(--shadow);
+  flex: 1 1 15rem;
+  /* crecer/encoger, base 15rem (rem) */
+  background: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--color-secondary);
+  /* border */
+  box-shadow: var(--shadow);
 }
 
 .role-card h3 {
-    margin-bottom: var(--space-xs);
-    font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+  font-size: 1.1rem;
 }
 
 .role-card p {
-    color: var(--color-text-light);
-    font-size: 0.95rem;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
 }
-
 
 /* ----------------------------------------------------------------------------
    8. FORMULARIOS (contacto + login)  ->  FLEXBOX en columna
@@ -382,63 +375,63 @@ h3 {
    ------------------------------------------------------------------------- */
 
 .form {
-    display: flex;
-    /* FLEXBOX */
-    flex-direction: column;
-    gap: var(--space-xs);
-    width: min(100%, 480px);
-    /* porcentaje con tope */
-    margin-inline: auto;
+  display: flex;
+  /* FLEXBOX */
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: min(100%, 480px);
+  /* porcentaje con tope */
+  margin-inline: auto;
 }
 
 .form label {
-    font-weight: 600;
-    margin-top: var(--space-sm);
+  font-weight: 600;
+  margin-top: var(--space-sm);
 }
 
 .form input,
 .form textarea {
-    padding: 0.75rem 0.9rem;
-    /* padding en rem */
-    border: var(--border);
-    /* border */
-    border-radius: var(--radius-sm);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    width: 100%;
-    /* % */
+  padding: 0.75rem 0.9rem;
+  /* padding en rem */
+  border: var(--border);
+  /* border */
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  width: 100%;
+  /* % */
 }
 
 .form button {
-    margin-top: var(--space-md);
+  margin-top: var(--space-md);
 }
 
 /* TP3 (refactor/login): .form-row, .checkbox-label y .link-muted eran
 exclusivos de login.html.*/
 
 .form-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: var(--space-sm);
-    font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-sm);
+  font-size: 0.9rem;
 }
 
 .checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-    font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 400;
 }
 
 .link-muted {
-    color: var(--color-text-light);
-    text-decoration: none;
-    font-size: 0.9rem;
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
 }
 
 .link-muted:hover {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
 */
 
@@ -448,28 +441,26 @@ exclusivos de login.html.*/
    9. FOOTER  ->  FLEXBOX
    ------------------------------------------------------------------------- */
 .site-footer {
-    background: var(--color-text);
-    color: var(--color-bg);
-    padding-block: var(--space-md);
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding-block: var(--space-md);
 }
 
 /* TP3 (refactor/index): reemplazado por utilidades flex responsive de Bootstrap.*/
 .footer-inner {
-    display: flex;
-    /* FLEXBOX */
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--space-sm);
-    font-size: 0.9rem;
+  display: flex;
+  /* FLEXBOX */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.9rem;
 }
-
 
 .site-footer a {
-    color: var(--color-secondary);
-    text-decoration: none;
+  color: var(--color-secondary);
+  text-decoration: none;
 }
-
 
 /* ----------------------------------------------------------------------------
    10. LOGIN (login.html)  ->  GRID de dos paneles [TP2]
@@ -477,46 +468,45 @@ exclusivos de login.html.*/
    (row/col) + componente card. Se conserva comentado como referencia.
    ------------------------------------------------------------------------- */
 
-
 .auth-body {
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    background: var(--color-bg-alt);
-    padding: var(--space-md);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--color-bg-alt);
+  padding: var(--space-md);
 }
 
 .auth-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: min(100%, 900px);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: min(100%, 900px);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
 .auth-side {
-    background: var(--color-primary);
-    color: var(--color-white);
-    padding: var(--space-lg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--space-sm);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-sm);
 }
 
 .auth-side .logo {
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 .auth-main {
-    background: var(--color-white);
-    padding: var(--space-lg);
+  background: var(--color-white);
+  padding: var(--space-lg);
 }
 
 .back-link {
-    display: inline-block;
-    margin-top: var(--space-md);
+  display: inline-block;
+  margin-top: var(--space-md);
 }
 */
 
@@ -527,130 +517,128 @@ exclusivos de login.html.*/
    ------------------------------------------------------------------------- */
 /* TP3 (refactor/dashboard): reemplazado por container-fluid, row y col-*.*/
 .dashboard {
-    display: grid;
-    /* CSS GRID */
-    grid-template-columns: 240px 1fr;
-    /* px fijo + fr flexible */
-    min-height: 100vh;
-    /* vh */
+  display: grid;
+  /* CSS GRID */
+  grid-template-columns: 240px 1fr;
+  /* px fijo + fr flexible */
+  min-height: 100vh;
+  /* vh */
 }
 
-
 .sidebar {
-    background: var(--color-text);
-    color: var(--color-bg);
-    /* TP3: p-4, d-flex, flex-column y gap-4 reemplazan estas reglas.*/
-    padding: var(--space-md);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg); 
+  background: var(--color-text);
+  color: var(--color-bg);
+  /* TP3: p-4, d-flex, flex-column y gap-4 reemplazan estas reglas.*/
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
 }
 
 .sidebar .logo {
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 .sidebar-nav ul {
-    list-style: none;
-    /* TP3: nav, flex-column y gap-1 de Bootstrap reemplazan estas reglas.*/
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem; 
+  list-style: none;
+  /* TP3: nav, flex-column y gap-1 de Bootstrap reemplazan estas reglas.*/
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .sidebar-nav a {
-    display: block;
-    padding: 0.6rem 0.75rem;
-    border-radius: var(--radius-sm);
-    color: var(--color-bg);
-    text-decoration: none;
-    font-weight: 600;
-    opacity: 0.85;
+  display: block;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-bg);
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.85;
 }
 
 .sidebar-nav a:hover,
 .sidebar-nav a.active {
-    background: rgba(255, 255, 255, 0.1);
-    opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
 }
 
 .logout-link {
-    /* TP3: reemplazado por la utilidad mt-md-auto.
+  /* TP3: reemplazado por la utilidad mt-md-auto.
     margin-top: auto; */
-    color: var(--color-secondary);
-    text-decoration: none;
-    font-weight: 600;
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .dashboard-content {
-    /* TP3: reemplazado por p-4 y p-lg-5.*/
-    padding: var(--space-lg); 
+  /* TP3: reemplazado por p-4 y p-lg-5.*/
+  padding: var(--space-lg);
 }
 
 .dashboard-header {
-    /* TP3: reemplazado por utilidades d-flex, flex-wrap, gap-3,
+  /* TP3: reemplazado por utilidades d-flex, flex-wrap, gap-3,
        justify-content-between, align-items-center y mb-5.*/
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--space-lg); 
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
 }
 
 .user-badge {
-    background: var(--color-white);
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius);
-    font-weight: 600;
-    box-shadow: var(--shadow);
+  background: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  box-shadow: var(--shadow);
 }
 
 /* Tarjetas de estadísticas -> GRID */
 /* TP3 (refactor/dashboard): reemplazado por row-cols-* y g-4 de Bootstrap.*/
 .stats-grid {
-    display: grid;
-    /*CSS GRID*/
-    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-    /* rem + fr */
-    gap: var(--space-md);
-    margin-bottom: var(--space-lg);
+  display: grid;
+  /*CSS GRID*/
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  /* rem + fr */
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
-
 .stat-card {
-    background: var(--color-white);
-    padding: var(--space-md);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    /* TP3: la distribución interna se mantiene con utilidades/componentes.*/
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs); 
+  background: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  /* TP3: la distribución interna se mantiene con utilidades/componentes.*/
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
 }
 
 .stat-number {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
 }
 
 .stat-label {
-    color: var(--color-text-light);
-    font-size: 0.9rem;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
 }
 
 .panel {
-    background: var(--color-white);
-    padding: var(--space-md);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+  background: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .placeholder-text {
-    color: var(--color-text-light);
-    font-style: italic;
+  color: var(--color-text-light);
+  font-style: italic;
 }
 
 /* ----------------------------------------------------------------------------
@@ -661,67 +649,65 @@ exclusivos de login.html.*/
    variables CSS
    ------------------------------------------------------------------------- */
 .login-page {
-    background-color: var(--color-bg-alt);
-    font-family: var(--font-body);
-    color: var(--color-text);
+  background-color: var(--color-bg-alt);
+  font-family: var(--font-body);
+  color: var(--color-text);
 }
 
 .login-panel {
-    background-color: var(--color-primary);
-    color: var(--color-white);
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .login-panel .logo {
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 .login-card {
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-lg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
 }
 
 .login-form h1,
 .login-panel h2 {
-    font-family: var(--font-heading);
+  font-family: var(--font-heading);
 }
 
 .login-form label {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .login-form .form-control:focus {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 0.2rem rgba(197, 113, 78, 0.25);
-    /* halo terracota en vez del azul por defecto de Bootstrap */
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.2rem rgba(197, 113, 78, 0.25);
+  /* halo terracota en vez del azul por defecto de Bootstrap */
 }
 
 .login-form .btn-primary:focus,
 .login-form .btn-primary:active,
 .login-form .btn-check:focus + .btn-primary {
-    box-shadow: 0 0 0 0.2rem rgba(197, 113, 78, 0.4);
-    
+  box-shadow: 0 0 0 0.2rem rgba(197, 113, 78, 0.4);
 }
 
 .login-form .form-check-input:checked {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .login-form input[type="password"]::-ms-reveal,
 .login-form input[type="password"]::-ms-clear {
-    display: none;
-    /* oculta el ícono nativo de "mostrar contraseña" de Edge/IE,
+  display: none;
+  /* oculta el ícono nativo de "mostrar contraseña" de Edge/IE,
        que duplica al botón propio (ícono de ojo) del login */
 }
 
 .login-link {
-    color: var(--color-text-light);
+  color: var(--color-text-light);
 }
 
 .login-link:hover {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
-
 
 /* ----------------------------------------------------------------------------
    14. TP3 — REFACTOR BOOTSTRAP (index.html + dashboard.html)
@@ -729,46 +715,59 @@ exclusivos de login.html.*/
    reglas conservan solamente la identidad visual de Nuova Vita.
    ------------------------------------------------------------------------- */
 .navbar {
-    padding-block: var(--space-sm);
+  padding-block: var(--space-sm);
 }
 
 .navbar .nav-link {
-    color: var(--color-text);
-    font-weight: 600;
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .about-text {
-    max-width: 60ch;
-    color: var(--color-text-light);
+  max-width: 60ch;
+  color: var(--color-text-light);
 }
 
 .contact-form {
-    max-width: 480px;
+  max-width: 480px;
 }
 
 .contact-form .form-label {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .contact-form .form-control:focus {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 0.2rem rgba(197, 113, 78, 0.25);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.2rem rgba(197, 113, 78, 0.25);
 }
 
 .sidebar .nav-link {
-    color: var(--color-bg);
-    font-weight: 600;
-    opacity: 0.85;
+  color: var(--color-bg);
+  font-weight: 600;
+  opacity: 0.85;
 }
 
 .sidebar .nav-link:hover,
 .sidebar .nav-link.active {
-    color: var(--color-bg);
-    background: rgba(255, 255, 255, 0.1);
-    opacity: 1;
+  color: var(--color-bg);
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+.character-counter {
+  color: var(--color-text-light);
+}
+
+.character-counter-limit {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.form-status:empty {
+  display: none;
 }
